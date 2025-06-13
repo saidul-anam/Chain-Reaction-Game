@@ -18,7 +18,11 @@ import com.chainreaction.ai.MiniMaxService;
 import com.chainreaction.ai.Move;
 import com.chainreaction.model.Board;
 import com.chainreaction.service.FileService;
-@CrossOrigin(origins = "*")
+@CrossOrigin(
+    origins = "https://chain-reaction-game-silk.vercel.app",
+    allowCredentials = "true"
+)
+
 @RestController
 @RequestMapping("/api/game")
 public class GameController {
