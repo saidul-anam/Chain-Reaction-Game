@@ -33,7 +33,7 @@ function App() {
 
   const fetchBoard = async () => {
     try {
-      const res = await fetch("http://localhost:8080/api/game/state");
+      const res = await fetch("https://chain-reaction-game.onrender.com/api/game/state");
       if (!res.ok) throw new Error("Failed to fetch game state");
       const data = await res.json();
       setBoardData(data.board);
@@ -69,7 +69,7 @@ function App() {
       // Controller expects "Ai" for AI vs AI mode, "Human" for Human vs AI
       const resetParam = gameMode === 'aiVsAi' ? 'Ai' : 'Human';
       
-      const res = await fetch(`http://localhost:8080/api/game/reset?name=${resetParam}`, {
+      const res = await fetch(`https://chain-reaction-game.onrender.com/api/game/reset?name=${resetParam}`, {
         method: "POST"
       });
       
@@ -96,7 +96,7 @@ function App() {
 
     try {
       const humanRes = await fetch(
-        "http://localhost:8080/api/game/human-move",
+        "https://chain-reaction-game.onrender.com/api/game/human-move",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -150,7 +150,7 @@ function App() {
         heuristicType = player2AI;
       }
       
-      const aiRes = await fetch(`http://localhost:8080/api/game/ai-move?Heuristic=${heuristicType}`);
+      const aiRes = await fetch(`https://chain-reaction-game.onrender.com/api/game/ai-move?Heuristic=${heuristicType}`);
       
       if (!aiRes.ok) throw new Error("AI move failed");
       const aiData = await aiRes.json();
