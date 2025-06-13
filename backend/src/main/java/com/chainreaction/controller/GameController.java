@@ -17,7 +17,7 @@ import com.chainreaction.ai.MiniMaxService;
 import com.chainreaction.ai.Move;
 import com.chainreaction.model.Board;
 import com.chainreaction.service.FileService;
-
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/api/game")
 public class GameController {
